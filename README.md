@@ -46,49 +46,6 @@ The assessment focused strictly on information gathering and host discovery with
 
 ---
 
-## 📸 Evidence & Screenshots
-
-### Phase 1: Reconnaissance (External Target: `networkwalks.com`)
-
-1.  **Domain Registration Insights (WHOIS):**
-    *   Command execution and initial results:
-        ![WHOIS initial command output](image_10.png)
-    *   Detailed registrar and domain status info:
-        ![WHOIS detailed data](image_9.png)
-
-2.  **Web Technology Fingerprinting (WhatWeb):**
-    *   Identifying WordPress, WP Download Manager, and Apache server stack:
-        ![WhatWeb results identifying WordPress and server info](image_13.png)
-
-3.  **Domain-to-IP Resolution (Nslookup):**
-    *   Mapping the domain `networkwalks.com` to its public IP `192.232.216.135`:
-        ![Nslookup output mapping domain to IP](image_11.png)
-
-4.  **HTTP Response Header Inspection (Curl):**
-    *   Analyzing server type, cookies, and HTTP/2 support:
-        ![Curl output showing technical headers](image_14.png)
-
-5.  **Web Application Firewall Detection (Wafw00f):**
-    *   Confirming active protection via ModSecurity:
-        ![Wafw00f confirming ModSecurity presence](image_12.png)
-
-6.  **DNS Infrastructure Enumeration (DNSRecon):**
-    *   Identifying all relevant DNS records and security flags:
-        ![DNSRecon output showing full DNS records](image_18.png)
-
-### Phase 2: Network Scanning (Internal Target: LAN)
-
-1.  **Subnet & Gateway Identification:** Identifying the local IP (`172.20.10.9`) and configuring Zenmap for a ping scan of the `/28` subnet:
-    ![Ipconfig showing local IP alongside Zenmap scan setup](image_15.png)
-
-2.  **Live Host Discovery:** Identifying active devices (`172.20.10.9`, `172.20.10.1`) on the LAN and their associated hardware (MAC) addresses using `ipconfig`:
-    ![Ipconfig finding MAC addresses alongside Zenmap host list](image_16.png)
-
-3.  **Network Topology Mapping:** Visualizing and exporting the relationships between all identified devices in the local subnet:
-    ![Zenmap topology map with legend showing host connectivity](image_17.png)
-
----
-
 ## 🛡️ Remediation Highlights
 * **Minimize Banner & Version Leakage:** Suppress verbose CMS/plugin version metadata and unnecessary HTTP response headers.
 * **Patch Management:** Maintain regular update cycles for core web platforms and third-party plugins.
